@@ -65,7 +65,7 @@ def format_data(data):
     # json_data = "\"maxValue\": \"{values\": "+f'{data["values"].tolist()}'+"}"
     json_data = "{\"maxValue\": " + f'{data_max}' + ", \"minValue\": " + f'{data_min}' + ", \"values\": " + f'{data["values"].tolist()}'.replace("'", "\"")+"}"
 
-    return json_data
+    return {"maxValue": data_max, "minValue": data_min, "values": data["values"].tolist()}
 
 
 app = FastAPI()
