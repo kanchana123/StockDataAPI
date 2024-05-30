@@ -63,7 +63,7 @@ def format_data(data):
     data['values'] = data[['Open', 'High', 'Low', 'Close', 'BB_UPPER', 'BB_MIDDLE', 'BB_LOWER']].apply(lambda x: f"{x[0]},{x[1]},{x[2]},{x[3]},{x[4]},{x[5]},{x[6]}", axis=True)
     
     # json_data = "\"maxValue\": \"{values\": "+f'{data["values"].tolist()}'+"}"
-    json_data = "{\"maxValue\": " + data_max + ", \"minValue\": " + data_min + ", \"values\": " + f'{data["values"].tolist()}'.replace("'", "\"")+"}"
+    json_data = "{\"maxValue\": " + f'{data_max}' + ", \"minValue\": " + f'{data_min}' + ", \"values\": " + f'{data["values"].tolist()}'.replace("'", "\"")+"}"
 
     return json_data
 
