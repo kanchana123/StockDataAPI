@@ -50,19 +50,19 @@ def format_data(data):
     data['BB_MIDDLE'] = data['BB_MIDDLE'] - data_min
     data['BB_LOWER'] = data['BB_LOWER'] - data_min
 
-    data['Open'] = -100*data['Open']/data_max
-    data['High'] = -100*data['High']/data_max
-    data['Low'] = -100*data['Low']/data_max
-    data['Close'] = -100*data['Close']/data_max
-    data['BB_UPPER'] = -100*data['BB_UPPER']/data_max
-    data['BB_MIDDLE'] = -100*data['BB_MIDDLE']/data_max
-    data['BB_LOWER'] = -100*data['BB_LOWER']/data_max
+    data['Open'] = -1*data['Open']/data_max
+    data['High'] = -1*data['High']/data_max
+    data['Low'] = -1*data['Low']/data_max
+    data['Close'] = -1*data['Close']/data_max
+    data['BB_UPPER'] = -1*data['BB_UPPER']/data_max
+    data['BB_MIDDLE'] = -1*data['BB_MIDDLE']/data_max
+    data['BB_LOWER'] = -1*data['BB_LOWER']/data_max
 
     data = data.round(3)
 
     data['values'] = data[['Open', 'High', 'Low', 'Close', 'BB_UPPER', 'BB_MIDDLE', 'BB_LOWER']].apply(lambda x: f"{x[0]},{x[1]},{x[2]},{x[3]},{x[4]},{x[5]},{x[6]}", axis=True)
     
-    json_data = "\"{values\": "+f"{data['values'].tolist()}"+"}"
+    json_data = "\"{values\": "+f'{data["values"].tolist()}'+"}"
 
     return json_data
 
