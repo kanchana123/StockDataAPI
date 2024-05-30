@@ -20,7 +20,7 @@ def get_data():
     while (data.shape[0] < 300 and count < 50):
         random_stock = random.choice(stocks_list)
 
-        data = yf.download(random_stock, period="1yr", start="2023-01-01")
+        data = yf.download(random_stock, period="1y", start="2023-01-01")
 
         count += 1
 
