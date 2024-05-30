@@ -3,4 +3,4 @@ uvicorn
 pandas
 yfinance
 finta
-random
+random2
